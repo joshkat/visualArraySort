@@ -1,0 +1,12 @@
+#arrayContainer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: grey;
+    width: 500px;
+    height: 500px;
+}
+
+#arrayContainer div{
+    width: 1px;
+    background-color: black;
+}
