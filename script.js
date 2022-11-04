@@ -5,7 +5,7 @@ const resetBtn = document.getElementById('reset')
 //create random array
 var randomArray = []
 function initArray(arr){    //using func so i can have reset btn later on
-    for(i=0; i<30; i++){
+    for(i=0; i<20; i++){
         arr[i] = Math.floor(Math.random() * 200) + 1 //randomnum 1-200
     }
 }
@@ -17,7 +17,7 @@ function createBoxes(arr){
         var bar = document.createElement('div')
         bar.style.height = arr[i] + 'px'
         bar.classList.add('bar')
-        // bar.innerText = arr[i]
+        bar.innerText = arr[i]
         arrayBox.appendChild(bar)
     }
 }
@@ -34,16 +34,16 @@ resetBtn.addEventListener('click', ()=>{
 })
 
 //sort functions down here
-function bubbleSort(nums, board){
+async function bubbleSort(nums, board){
     for(var i=0; i<nums.length; i++){
         for(var j=0; j< (nums.length-i-1); j++){
             if(nums[j] > nums[j+1]){
                 var temp = nums[j]
                 nums[j] = nums[j+1]
                 nums[j+1] = temp
-                //this is where we get a little bit risky :smirk:
                 clearBoard(board)                    
                 createBoxes(nums)
+                await sleep(50)
             }
         }
     }  
@@ -52,7 +52,11 @@ function bubbleSort(nums, board){
 //helper function for sort
 function clearBoard(board){
     while(board.firstChild){
-        board.removeChild(board.firstChild);
+        board.removeChild(board.firstChild)
     }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
