@@ -1,15 +1,46 @@
+html, body { /*edge to edge boxes!!*/
+    margin:0;
+    padding:0;
+    background-color: #0d1117;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #161b22;
+    height: 10vh;
+}
+
+.controlButtons, .algoSelector{
+    margin: 0px 10px 0px 10px;
+}
+
+button{
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    font-size: larger;
+}
+
+button:hover{
+    color: grey;
+}
+
 #arrayContainer{
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
-    background-color: grey;
+    background-color: #161b22;
     width: 500px;
     height: 525px;
+    border: solid 3px #30363d;
+    border-radius: 5px;
 }
 
 #arrayContainer div{
     width: 20px;
-    background-color: black;
+    background-color: #f1e05a;
     color: white;
     text-align: center;
     font-family: monospace;
