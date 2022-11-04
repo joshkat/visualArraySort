@@ -1,6 +1,14 @@
 const arrayBox = document.getElementById('arrayContainer')
 const sortBtn = document.getElementById('startAlgo')
 const resetBtn = document.getElementById('reset')
+const bubbleBtn = document.getElementById('bubbleSort')
+const mergeBtn = document.getElementById('mergeSort')
+const heapBtn = document.getElementById('heapSort')
+const quickBtn = document.getElementById('quickSort')
+const radixBtn = document.getElementById('radixSort')
+
+var currentAlgo = "bubbleSort" //default algo
+var currentlySorting = false
 
 //create random array
 var randomArray = []
@@ -26,14 +34,20 @@ function createBoxes(arr){
 }
 createBoxes(randomArray)
 
+//header control btns
+
 sortBtn.addEventListener('click', ()=>{
-    bubbleSort(randomArray, arrayBox)
+    currentlySorting = true
+    resetBtn.classList.add('redButton')
+    preformCurrentAlgo(currentAlgo)
 })
 
 resetBtn.addEventListener('click', ()=>{
-    clearBoard(arrayBox)
-    initArray(randomArray)
-    createBoxes(randomArray)
+    if(currentlySorting == false){
+        clearBoard(arrayBox)
+        initArray(randomArray)
+        createBoxes(randomArray)
+    }
 })
 
 //sort functions down here
@@ -49,10 +63,12 @@ async function bubbleSort(nums, board){
                 await sleep(50)
             }
         }
-    }  
+    }
+    resetBtn.classList.remove('redButton')
+    currentlySorting = false  
 }
 
-//helper function for sort
+//helper functions for sort
 function clearBoard(board){
     while(board.firstChild){
         board.removeChild(board.firstChild)
@@ -63,3 +79,22 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+function preformCurrentAlgo(algoName){
+    switch(algoName){
+        case 'bubbleSort':
+            bubbleSort(randomArray, arrayBox)
+            break
+        case 'mergeSort':
+            mergeSort(randomArray, arrayBox)
+            break
+        case 'heapSort':
+            heapSort(randomArray, arrayBox)
+            break
+        case 'quickSort':
+            quickSort(randomArray, arrayBox)
+            break
+        case 'radixSort':
+            quickSort(randomArray, arrayBox)
+            break
+    }
+}

@@ -28,6 +28,10 @@ button:hover{
     color: grey;
 }
 
+.redButton{
+    color: red;
+}
+
 #arrayContainer{
     display: flex;
     justify-content: space-evenly;
