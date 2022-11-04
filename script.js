@@ -15,10 +15,13 @@ initArray(randomArray)
 function createBoxes(arr){
     for(i=0; i<arr.length; i++){
         var bar = document.createElement('div')
+        var num = document.createElement('div')
         bar.style.height = arr[i] + 'px'
         bar.classList.add('bar')
-        bar.innerText = arr[i]
+        num.innerText = arr[i]
+        num.classList.add('number')
         arrayBox.appendChild(bar)
+        bar.appendChild(num)
     }
 }
 createBoxes(randomArray)

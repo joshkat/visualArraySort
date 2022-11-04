@@ -8,6 +8,8 @@
 }
 
 #arrayContainer div{
+    display: flex;
+    justify-content: center;
     width: 20px;
     margin-left: 2px;
     margin-right: 2px;
@@ -17,3 +19,13 @@
     font-family: monospace;
     font-size: x-small;
 }
+
+#arrayContainer div div{
+    background-color: transparent;
+    position: relative;
+    bottom: 12px;
+    width: min-content;
+    height: min-content;
+    text-align: center;
+}
+
