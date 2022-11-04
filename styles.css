@@ -8,5 +8,11 @@
 
 #arrayContainer div{
     width: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
     background-color: black;
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: x-small;
 }
