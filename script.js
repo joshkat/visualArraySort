@@ -6,7 +6,7 @@ const resetBtn = document.getElementById('reset')
 var randomArray = []
 function initArray(arr){    //using func so i can have reset btn later on
     for(i=0; i<20; i++){
-        arr[i] = Math.floor(Math.random() * 200) + 1 //randomnum 1-200
+        arr[i] = Math.floor(Math.random() * 500) + 1 //randomnum 1-200
     }
 }
 initArray(randomArray)
