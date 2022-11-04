@@ -2,6 +2,7 @@ html, body { /*edge to edge boxes!!*/
     margin:0;
     padding:0;
     background-color: #0d1117;
+    height: 100%;
 }
 
 header{
@@ -36,6 +37,13 @@ button:hover{
     height: 525px;
     border: solid 3px #30363d;
     border-radius: 5px;
+}
+
+.mainContent{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 90%; 
 }
 
 #arrayContainer div{
