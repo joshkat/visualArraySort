@@ -24,8 +24,12 @@ button{
     font-size: larger;
 }
 
-button:hover{
+.controlButton:hover{
     color: grey;
+}
+
+button:hover{
+
 }
 
 .redButton{
