@@ -7,8 +7,9 @@ const mergeBtn = document.getElementById('mergeSort')
 const heapBtn = document.getElementById('heapSort')
 const quickBtn = document.getElementById('quickSort')
 const radixBtn = document.getElementById('radixSort')
+const algoButtons = [bubbleBtn, selectionBtn, mergeBtn, heapBtn, quickBtn, radixBtn]
 
-var currentAlgo = "bubbleSort" //default algo
+var currentAlgo = "" //default algo
 var currentlySorting = false
 
 //create random array
@@ -37,29 +38,44 @@ createBoxes(randomArray)
 
 //header control btns
 
+//func to adjust color of selected button
+function currentButton(clickedBtn, arr){
+    for(var i=0; i<arr.length; i++){
+        arr[i].classList.remove('currentAlgo')
+        arr[i].classList.add('controlButton')
+    }
+    clickedBtn.classList.remove('controlButton')
+    clickedBtn.classList.add('currentAlgo')
+}
+
 bubbleBtn.addEventListener('click', ()=>{
     currentAlgo = 'bubbleSort'
+    currentButton(bubbleBtn, algoButtons)
 })
 
 selectionBtn.addEventListener('click', ()=>{
     currentAlgo = 'selectionSort'
+    currentButton(selectionBtn,algoButtons)
 })
 
 mergeBtn.addEventListener('click', ()=>{
     currentAlgo = 'mergeSort'
+    currentButton(mergeBtn,algoButtons)
 })
 
 heapBtn.addEventListener('click', ()=>{
     currentAlgo = 'heapSort'
+    currentButton(heapBtn, algoButtons)    
 })
 
 quickBtn.addEventListener('click', ()=>{
     currentAlgo = 'quickSort'
+    currentButton(quickBtn, algoButtons)
 })
 
 radixBtn.addEventListener('click', ()=>{
     currentAlgo = 'radixSort'
-    console.log(currentAlgo)
+    currentButton(radixBtn,algoButtons)
 })
 
 

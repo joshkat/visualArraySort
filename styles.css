@@ -28,8 +28,8 @@ button{
     color: grey;
 }
 
-button:hover{
-
+.currentAlgo{
+    color: green;
 }
 
 .redButton{
