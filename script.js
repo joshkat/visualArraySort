@@ -9,7 +9,7 @@ const quickBtn = document.getElementById('quickSort')
 const radixBtn = document.getElementById('radixSort')
 const algoButtons = [bubbleBtn, selectionBtn, mergeBtn, heapBtn, quickBtn, radixBtn]
 
-var currentAlgo = "" //default algo
+var currentAlgo = "bubbleSort" //default algo
 var currentlySorting = false
 
 //create random array
@@ -78,10 +78,10 @@ radixBtn.addEventListener('click', ()=>{
     currentButton(radixBtn,algoButtons)
 })
 
-
 sortBtn.addEventListener('click', ()=>{
     currentlySorting = true
     resetBtn.classList.add('redButton')
+    resetBtn.classList.remove('controlButton')
     preformCurrentAlgo(currentAlgo)
 })
 
@@ -108,6 +108,7 @@ async function bubbleSort(nums, board){
         }
     }
     resetBtn.classList.remove('redButton')
+    resetBtn.classList.add('controlButton')
     currentlySorting = false  
 }
 
@@ -124,6 +125,7 @@ async function selectionSort(nums, board){
         await sleep(100)
     }
     resetBtn.classList.remove('redButton')
+    resetBtn.classList.add('controlButton')
     currentlySorting = false  
 }
 
