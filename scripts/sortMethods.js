@@ -1,32 +1,66 @@
-async function bubbleSort(nums, board) {
-  for (var i = 0; i < nums.length; i++) {
-    for (var j = 0; j < nums.length - i - 1; j++) {
-      if (nums[j] > nums[j + 1]) {
-        var temp = nums[j];
-        nums[j] = nums[j + 1];
-        nums[j + 1] = temp;
-        clearBoard(board);
-        createBoxes(nums);
-        await sleep(50);
+async function bubbleSort(array) {
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < array.length - 1; i++) {
+      // Indices of the elements being compared
+      const comparisons = [i, i + 1];
+
+      if (array[i] > array[i + 1]) {
+        // Indices of the elements being swapped
+        const swaps = [i, i + 1];
+
+        // Swap the elements
+        [array[i], array[i + 1]] = [array[i + 1], array[i]];
+        swapped = true;
+
+        // Update the display to reflect the change
+        updateDisplay(array, comparisons, swaps);
+        await sleep(50); // Sleep for 100 milliseconds
+      } else {
+        // Update the display to reflect the comparison
+        updateDisplay(array, comparisons, []);
+        await sleep(50); // Sleep for 100 milliseconds
       }
     }
-  }
+  } while (swapped);
+
+  // Reset the colors of the elements
+  updateDisplay(array, [], []);
   resetBtn.classList.remove("redButton");
   resetBtn.classList.add("controlButton");
   currentlySorting = false;
 }
 
-async function selectionSort(nums, board) {
-  for (var i = 0; i < nums.length - 1; i++) {
-    var min_idx = i;
-    for (var j = i + 1; j < nums.length; j++)
-      if (nums[j] < nums[min_idx]) min_idx = j;
+async function selectionSort(array) {
+  for (let i = 0; i < array.length - 1; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < array.length; j++) {
+      // Indices of the elements being compared
+      const comparisons = [j, minIndex];
 
-    swap(nums, min_idx, i);
-    clearBoard(board);
-    createBoxes(nums);
-    await sleep(100);
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
+      } else {
+        // Update the display to reflect the comparison
+        updateDisplay(array, comparisons, []);
+        await sleep(100); // Sleep for 100 milliseconds
+      }
+    }
+
+    // Indices of the elements being swapped
+    const swaps = [i, minIndex];
+
+    // Swap the elements
+    [array[i], array[minIndex]] = [array[minIndex], array[i]];
+
+    // Update the display to reflect the change
+    updateDisplay(array, [], swaps);
+    await sleep(100); // Sleep for 100 milliseconds
   }
+
+  // Reset the colors of the elements
+  updateDisplay(array, [], []);
   resetBtn.classList.remove("redButton");
   resetBtn.classList.add("controlButton");
   currentlySorting = false;
@@ -232,11 +266,6 @@ function getDigit(num, place) {
 }
 
 //helper functions for sort algos
-function clearBoard(board) {
-  while (board.firstChild) {
-    board.innerHTML = "";
-  }
-}
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -314,4 +343,8 @@ function createElement(element) {
 
   // Append the new element to the board
   board.appendChild(div);
+}
+
+function clearBoard(box) {
+  box.innerHTML = "";
 }
