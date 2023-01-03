@@ -1,3 +1,10 @@
+let sleepSpeed = 100; //by default @ 100
+const input = document.getElementById("speed");
+
+input.addEventListener("input", () => {
+  sleepSpeed = parseInt(input.value);
+});
+
 async function bubbleSort(array) {
   let swapped;
   do {
@@ -16,11 +23,11 @@ async function bubbleSort(array) {
 
         // Update the display to reflect the change
         updateDisplay(array, comparisons, swaps);
-        await sleep(50); // Sleep for 100 milliseconds
+        await sleep(sleepSpeed); // Sleep for 100 milliseconds
       } else {
         // Update the display to reflect the comparison
         updateDisplay(array, comparisons, []);
-        await sleep(50); // Sleep for 100 milliseconds
+        await sleep(sleepSpeed); // Sleep for 100 milliseconds
       }
     }
   } while (swapped);
@@ -44,7 +51,7 @@ async function selectionSort(array) {
       } else {
         // Update the display to reflect the comparison
         updateDisplay(array, comparisons, []);
-        await sleep(100); // Sleep for 100 milliseconds
+        await sleep(sleepSpeed); // Sleep for 100 milliseconds
       }
     }
 
@@ -56,7 +63,7 @@ async function selectionSort(array) {
 
     // Update the display to reflect the change
     updateDisplay(array, [], swaps);
-    await sleep(100); // Sleep for 100 milliseconds
+    await sleep(sleepSpeed); // Sleep for 100 milliseconds
   }
 
   // Reset the colors of the elements
@@ -87,7 +94,7 @@ async function merge(left, right, offset = 0) {
 
     // Update the display to reflect the change
     updateDisplay(sorted.concat(left, right), comparisons, swaps);
-    await sleep(100); // Delay for 100 milliseconds
+    await sleep(sleepSpeed); // Delay for 100 milliseconds
   }
 
   resetBtn.classList.remove("redButton");
@@ -131,7 +138,7 @@ async function heapSort(array) {
 
     // Update the display to reflect the change
     updateDisplay(array, [], swaps);
-    await sleep(100); // Delay for 100 milliseconds
+    await sleep(sleepSpeed); // Delay for 100 milliseconds
 
     // Heapify the reduced heap
     await heapify(array, i, 0);
@@ -169,13 +176,13 @@ async function heapify(array, n, i) {
 
     // Update the display to reflect the change
     updateDisplay(array, comparisons, swaps);
-    await sleep(100); // Delay for 100 milliseconds
+    await sleep(sleepSpeed); // Delay for 100 milliseconds
 
     await heapify(array, n, largest);
   } else {
     // Update the display to reflect the comparison
     updateDisplay(array, comparisons, []);
-    await sleep(100); // Delay for 100 milliseconds
+    await sleep(sleepSpeed); // Delay for 100 milliseconds
   }
 }
 
@@ -213,11 +220,11 @@ async function partition(array, left, right) {
 
       // Update the display to reflect the change
       updateDisplay(array, comparisons, swaps);
-      await sleep(100); // Delay for 100 milliseconds
+      await sleep(sleepSpeed); // Delay for 100 milliseconds
     } else {
       // Update the display to reflect the comparison
       updateDisplay(array, comparisons, []);
-      await sleep(100); // Delay for 100 milliseconds
+      await sleep(sleepSpeed); // Delay for 100 milliseconds
     }
   }
 
@@ -227,7 +234,7 @@ async function partition(array, left, right) {
 
   // Update the display to reflect the change
   updateDisplay(array, [], swaps);
-  await sleep(100); // Delay for 100 milliseconds
+  await sleep(sleepSpeed); // Delay for 100 milliseconds
 
   return pivotIndex;
 }
@@ -247,7 +254,7 @@ async function radixSort(array) {
 
     // Update the display to reflect the change
     updateDisplay(array, [], []);
-    await sleep(100); // Sleep for 100 milliseconds
+    await sleep(sleepSpeed); // Sleep for 100 milliseconds
   }
 
   // Reset the colors of the elements

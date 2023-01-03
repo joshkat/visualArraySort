@@ -1,72 +1,95 @@
-html, body { /*edge to edge boxes!!*/
-    margin:0;
-    padding:0;
-    background-color: #0d1117;
-    height: 100%;
+html,
+body {
+  /*edge to edge boxes!!*/
+  margin: 0;
+  padding: 0;
+  background-color: #0d1117;
+  height: 100%;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #161b22;
-    height: 10vh;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;
+  height: 10vh;
 }
 
-.controlButtons, .algoSelector{
-    margin: 0px 10px 0px 10px;
+.controlButtons,
+.algoSelector {
+  margin: 0px 10px 0px 10px;
 }
 
-button{
-    background-color: transparent;
-    border: 0px;
-    color: white;
-    font-size: larger;
+button {
+  background-color: transparent;
+  border: 0px;
+  color: white;
+  font-size: larger;
 }
 
-.controlButton:hover{
-    color: grey;
+.controlButton:hover {
+  color: grey;
 }
 
-.currentAlgo{
-    color: green;
+.currentAlgo {
+  color: green;
 }
 
-.redButton{
-    color: red;
+.redButton {
+  color: red;
 }
 
-#arrayContainer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    background-color: #161b22;
-    width: 500px;
-    height: 525px;
-    border: solid 3px #30363d;
-    border-radius: 5px;
+#arrayContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background-color: #161b22;
+  width: 500px;
+  height: 525px;
+  border: solid 3px #30363d;
+  border-radius: 5px;
 }
 
-.mainContent{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 90%; 
+.mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
 }
 
-#arrayContainer div{
-    width: 20px;
-    background-color: #f1e05a;
-    color: white;
-    text-align: center;
-    font-family: monospace;
-    font-size: x-small;
+#arrayContainer div {
+  width: 20px;
+  background-color: #f1e05a;
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  font-size: x-small;
 }
 
-#arrayContainer div div{
-    background-color: transparent;
-    position: relative;
-    bottom: 12px;
-    height: min-content;
+#arrayContainer div div {
+  background-color: transparent;
+  position: relative;
+  bottom: 12px;
+  height: min-content;
 }
 
+input {
+  width: 125px;
+  color: white;
+  border: solid 1px;
+  border-radius: 5px;
+  height: 20px;
+  text-align: center;
+  background-color: #161b22;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
