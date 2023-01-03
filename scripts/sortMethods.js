@@ -287,10 +287,10 @@ function swap(arr, xp, yp) {
 function preformCurrentAlgo(algoName) {
   switch (algoName) {
     case "bubbleSort":
-      bubbleSort(randomArray, arrayBox);
+      bubbleSort(randomArray);
       break;
     case "selectionSort":
-      selectionSort(randomArray, arrayBox);
+      selectionSort(randomArray);
       break;
     case "mergeSort":
       mergeSort(randomArray);
