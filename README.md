@@ -11,6 +11,6 @@ can make them more efficient. Plus, it's just plain fun to watch the algorithms 
 Using the input area at the top of the screen, you can adjust the sorting speed dynamically as the algorithm is running. 
 The default speed is 100ms per swap, but you can adjust this to your liking mid sort to either slow down or speed up the algorithim that's runnning.
 
-Keep in mind, purple means the algorithim isn't going to swap and red means it's will be swapping :)
+Keep in mind, purple means the algorithim isn't going to swap and red means it will be swapping :)
 
 Click [here](https://joshkat.github.io/visualArraySort/) for a live preview of the app
